@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import { ChakraProvider, Center, Spinner, Box, Text, Flex } from '@chakra-ui/react';
 import CountryInfo from './components/CountryInfo';
+import {fetchCountryData} from './api/api'
+import { useParams } from 'react-router-dom';
 
 function App() {
 
@@ -9,22 +10,23 @@ function App() {
   let [loading, setLoading] = useState(true);
   let [error, setError] = useState(null);
 
+  const { countryName } = useParams();
+
   useEffect (() => {
-    const fetchCountryData = async () => {
-    try {
-      let response = await axios.get('https://countries-api-rest.onrender.com/contriesapi/obtenerPais?nombre=colombia');
-      setCountry(response.data);
+    const fetchData = async () => {
+      try {
+        const data = await fetchCountryData(countryName);
+        setCountry(data);
+      }
+      catch (error) {
+        setError(error.message);
+      }
+      finally {
+        setLoading(false);
+      }
     }
-    catch (error) {
-      console.error('Error al obtener la info del pais');
-      setError('Error al obtener la información del pais');
-    }
-    finally {
-      setLoading(false);
-    }
-  };
-      fetchCountryData();
-  },[]);
+    fetchData();
+  },[countryName]);
 
   return (
     <ChakraProvider>

@@ -4,11 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CountrySearch from './components/CountrySearch';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<CountrySearch/>}></Route>
+        <Route path='/App/:countryName' element={<App/>}></Route>
+      </Routes>
+    </BrowserRouter>
   </ChakraProvider>
 );
 
