@@ -21,7 +21,7 @@ const CountryInfo = ({ country }) => {
         <Text>{country.poblacion}</Text>
       </Flex>
 
-      <Image src={country.bandera} alt={`${country.nombre} Flag`} borderRadius="md" mb={4} />
+      <Image src={country.bandera} alt={`Bandera de ${country.nombre}`} borderRadius="md" mb={4} />
 
       <Flex align="center" mb={2}>
         <Text fontWeight="bold" mr={2}>Lenguaje/s:</Text>
@@ -36,8 +36,8 @@ const CountryInfo = ({ country }) => {
         <Link href={country.mapas.openStreetMaps} isExternal>
           OpenStreetMaps
         </Link>
-
       </VStack>
+      
     </Box>
   );
 };

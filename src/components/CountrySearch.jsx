@@ -12,7 +12,7 @@ const CountrySearch = () => {
 
     return (
         <Box>
-            <Center minHeight="100vh" backgroundColor="f5f5f5f5">
+            <Center minHeight="100vh" backgroundColor="f5f5f5">
                 <Box p={6} boxShadow="md" borderRadius="md" backgroundColor="white" maxW="lg" width="100%">
                     <Input
                      placeholder="Ingrese el nombre del país" 

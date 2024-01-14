@@ -7,12 +7,12 @@ import { useParams } from 'react-router-dom';
 function App() {
 
   const [country, setCountry] = useState(null);
-  let [loading, setLoading] = useState(true);
-  let [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const { countryName } = useParams();
+  const { countryName } = useParams();//Capturamos el parametro de la url
 
-  useEffect (() => {
+  useEffect (() => { //Renderizar cambios provocados por la peticion de la api
     const fetchData = async () => {
       try {
         const data = await fetchCountryData(countryName);
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <ChakraProvider>
-      <Center minHeight="100vh" backgroundColor="f5f5f5f5">
+      <Center minHeight="100vh" backgroundColor="f5f5f5">
         <Box p={6} boxShadow="md" borderRadius="md" backgroundColor="white" maxW="lg" width="100%">
           <Text fontSize="2xl" fontWeight="bold" mb={4}>
               Información del pais
@@ -41,12 +41,12 @@ function App() {
           {error && (
               <Flex direction="column" align="center" mt={4}>
                   <Text color="red.500" mb={2}>{error}</Text>
-                  <Text fontSize="sm">Por favor, intentalo mas tarde...</Text>
+                  <Text fontSize="sm">Por favor, inténtalo más tarde...</Text>
               </Flex>
             )}
 
             {country && (
-              <CountryInfo country={country}></CountryInfo>
+              <CountryInfo country={country} />
             )}
 
         </Box>
