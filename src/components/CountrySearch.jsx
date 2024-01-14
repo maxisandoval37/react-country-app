@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import {Box, Center, Input, Button} from '@chakra-ui/react';
+import { LuSearch } from 'react-icons/lu'; 
 
 const CountrySearch = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -21,7 +22,7 @@ const CountrySearch = () => {
                      mb={4}
                     />
 
-                    <Button colorScheme="blue" onClick={handleSearch}>
+                    <Button colorScheme="blue" onClick={handleSearch} leftIcon={<LuSearch />}>
                         Buscar
                     </Button>
                 </Box>
