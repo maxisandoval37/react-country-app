@@ -6,6 +6,7 @@ Aplicación desarrollada en React, proporciona un "buscador de países", obtenie
 - **@chakra-ui/react:** Componentes de interfaz de usuario para React.
 - **@emotion/react:** Biblioteca para trabajar con estilos en React.
 - **axios:** Cliente HTTP para realizar solicitudes a servicios web.
+- **react-icons:** Conjunto de iconos React para mejorar la interfaz de usuario.
 - **framer-motion:** Biblioteca para animaciones en React.
 - **react-dom:** Paquete para manipular el DOM en aplicaciones React.
 - **react-router-dom:** Gestión de rutas y navegación en aplicaciones React.
